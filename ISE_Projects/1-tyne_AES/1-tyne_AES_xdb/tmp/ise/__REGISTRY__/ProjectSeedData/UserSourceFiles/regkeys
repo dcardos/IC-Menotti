@@ -1,0 +1,18 @@
+NUM_USER_FILES
+5
+s
+user_file_1
+aes_128.v
+s
+user_file_2
+../../AES Cores/1-tiny_aes/trunk/rtl/aes_192.v
+s
+user_file_3
+../../AES Cores/1-tiny_aes/trunk/rtl/aes_256.v
+s
+user_file_4
+../../AES Cores/1-tiny_aes/trunk/rtl/round.v
+s
+user_file_5
+../../AES Cores/1-tiny_aes/trunk/rtl/table.v
+s
