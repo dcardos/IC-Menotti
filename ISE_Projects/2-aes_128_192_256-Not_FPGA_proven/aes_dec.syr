@@ -1,0 +1,1120 @@
+Release 10.1.03 - xst K.39 (lin)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to /root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: aes_dec.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "aes_dec.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "aes_dec"
+Output Format                      : NGC
+Target Device                      : xc2vp50-6-ff1148
+
+---- Source Options
+Top Module Name                    : aes_dec
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : aes_dec.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/aes_pkg.vhdl" in Library work.
+Architecture aes_pkg of Entity aes_pkg is up to date.
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/key_expansion.vhdl" in Library work.
+Architecture behavioral of Entity key_expansion is up to date.
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/aes_dec.vhdl" in Library work.
+Entity <aes_dec> compiled.
+Entity <aes_dec> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <aes_dec> in library <work> (architecture <Behavioral>) with generics.
+	KEY_SIZE = 2
+
+Analyzing hierarchy for entity <key_expansion> in library <WORK> (architecture <behavioral>) with generics.
+	KEY_SIZE = 2
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <aes_dec> in library <work> (Architecture <Behavioral>).
+	KEY_SIZE = 2
+Entity <aes_dec> analyzed. Unit <aes_dec> generated.
+
+Analyzing generic Entity <key_expansion> in library <WORK> (Architecture <behavioral>).
+	KEY_SIZE = 2
+Entity <key_expansion> analyzed. Unit <key_expansion> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <key_expansion>.
+    Related source file is "/root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/key_expansion.vhdl".
+    Found 64x32-bit dual-port RAM <Mram_KEY_EXPAN0> for signal <KEY_EXPAN0>.
+    Found 10x8-bit ROM for signal <$mux0000> created at line 363.
+    Found 256x8-bit ROM for signal <$varindex0000> created at line 256.
+    Found 1-bit register for signal <DONE_O>.
+    Found 1-bit register for signal <CALCULATION>.
+    Found 1-bit register for signal <FF_GET_KEY>.
+    Found 1-bit register for signal <FF_VALID_KEY>.
+    Found 2-bit up counter for signal <i_BYTE_CNTR4>.
+    Found 6-bit register for signal <i_INTERN_ADDR_RD0>.
+    Found 6-bit adder for signal <i_INTERN_ADDR_RD0$mux0000>.
+    Found 4-bit up counter for signal <i_ROUND>.
+    Found 6-bit up counter for signal <i_SRAM_ADDR_WR0>.
+    Found 1-bit register for signal <SRAM_WREN0>.
+    Found 1-bit register for signal <START_CALCULATION>.
+    Found 8-bit up counter for signal <v_CALCULATION_CNTR>.
+    Found 32-bit register for signal <v_KEY32_IN>.
+    Found 32-bit register for signal <v_KEY_COL_OUT0>.
+    Found 8-bit register for signal <v_SUB_WORD>.
+    Found 32-bit register for signal <v_TEMP_VECTOR>.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_0$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_0$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_1$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_1$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_10$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_11$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_12$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_13$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_14$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_15$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_16$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_17$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_18$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_19$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_2$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_2$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_20$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_21$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_22$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_23$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_24$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_25$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_26$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_27$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_28$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_29$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_3$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_3$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_30$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_31$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_4$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_4$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_5$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_5$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_6$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_6$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_7$xor0000> created at line 363.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_7$xor0001> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_8$xor0000> created at line 365.
+    Found 1-bit xor2 for signal <v_TEMP_VECTOR_9$xor0000> created at line 365.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 ROM(s).
+	inferred   4 Counter(s).
+	inferred 116 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <key_expansion> synthesized.
+
+
+Synthesizing Unit <aes_dec>.
+    Related source file is "/root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/aes_dec.vhdl".
+    Found 4x32-bit dual-port RAM <Mram_t_STATE_RAM0> for signal <t_STATE_RAM0>.
+    Found 256x8-bit ROM for signal <$varindex0000> created at line 469.
+    Found 256x8-bit ROM for signal <$varindex0001> created at line 485.
+    Found 256x8-bit ROM for signal <$varindex0002> created at line 482.
+    Found 256x8-bit ROM for signal <$varindex0003> created at line 478.
+    Found 1-bit register for signal <VALID_O>.
+    Found 8-bit register for signal <DATA_O>.
+    Found 1-bit register for signal <CALCULATION>.
+    Found 1-bit register for signal <FF_GET_KEY>.
+    Found 1-bit register for signal <FF_VALID_DATA>.
+    Found 1-bit register for signal <GET_KEY>.
+    Found 2-bit register for signal <i_RAM_ADDR_RD0>.
+    Found 2-bit adder for signal <i_RAM_ADDR_RD0$addsub0000> created at line 267.
+    Found 2-bit up counter for signal <i_RAM_ADDR_WR0>.
+    Found 4-bit up counter for signal <i_ROUND>.
+    Found 1-bit register for signal <LAST_ROUND>.
+    Found 1-bit register for signal <SRAM_WREN0>.
+    Found 128-bit register for signal <STATE_TABLE1>.
+    Found 128-bit xor2 for signal <TMP_STATE>.
+    Found 8-bit up counter for signal <v_CALCULATION_CNTR>.
+    Found 2-bit up counter for signal <v_CNT4>.
+    Found 32-bit register for signal <v_DATA_COLUMN>.
+    Found 6-bit down counter for signal <v_KEY_NUMB>.
+    Found 32-bit register for signal <v_RAM_IN0>.
+    Found 1-bit xor2 for signal <v_RAM_IN0_0$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_0$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_0$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_1$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_1$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_1$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_10$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_10$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_10$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_10$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_10$xor0012> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_11$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_11$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_11$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_11$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_11$xor0012> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_12$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_12$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_12$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_12$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_12$xor0012> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_13$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_13$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_13$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_13$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_13$xor0012> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_14$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_14$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_14$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_14$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_14$xor0012> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_15$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_15$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_15$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_15$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_15$xor0012> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_16$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_16$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_16$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_16$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_16$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_16$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_16$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_16$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_16$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_17$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_17$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_17$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_17$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_17$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_17$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_17$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_17$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_17$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_18$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_18$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_18$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_18$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_18$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_18$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_18$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_18$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_18$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_19$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_19$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_19$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_19$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_19$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_19$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_19$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_19$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_19$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_2$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_2$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_2$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_20$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_20$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_20$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_20$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_20$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_20$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_20$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_20$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_20$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_21$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_21$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_21$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_21$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_21$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_21$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_21$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_21$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_21$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_22$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_22$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_22$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_22$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_22$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_22$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_22$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_22$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_22$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_23$xor0000> created at line 289.
+    Found 1-bit xor4 for signal <v_RAM_IN0_23$xor0001> created at line 301.
+    Found 1-bit xor4 for signal <v_RAM_IN0_23$xor0002> created at line 318.
+    Found 1-bit xor4 for signal <v_RAM_IN0_23$xor0003> created at line 335.
+    Found 1-bit xor4 for signal <v_RAM_IN0_23$xor0004> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_23$xor0005> created at line 301.
+    Found 1-bit xor2 for signal <v_RAM_IN0_23$xor0006> created at line 318.
+    Found 1-bit xor2 for signal <v_RAM_IN0_23$xor0007> created at line 335.
+    Found 1-bit xor2 for signal <v_RAM_IN0_23$xor0008> created at line 352.
+    Found 1-bit xor2 for signal <v_RAM_IN0_24$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_24$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_24$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_24$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_24$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_25$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_25$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_25$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_25$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_25$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_26$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_26$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_26$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_26$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_26$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_27$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_27$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_27$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_27$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_27$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_28$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_28$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_28$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_28$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_28$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_29$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_29$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_29$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_29$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_29$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_3$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_3$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_3$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_30$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_30$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_30$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_30$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_30$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_31$xor0000> created at line 289.
+    Found 1-bit xor6 for signal <v_RAM_IN0_31$xor0001> created at line 305.
+    Found 1-bit xor6 for signal <v_RAM_IN0_31$xor0002> created at line 322.
+    Found 1-bit xor6 for signal <v_RAM_IN0_31$xor0003> created at line 339.
+    Found 1-bit xor6 for signal <v_RAM_IN0_31$xor0004> created at line 356.
+    Found 1-bit xor2 for signal <v_RAM_IN0_4$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_4$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_4$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_5$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_5$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_5$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_6$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_6$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_6$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_7$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0001> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0002> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0003> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0004> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0005> created at line 293.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0006> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0007> created at line 310.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0008> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0009> created at line 327.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0010> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0011> created at line 344.
+    Found 1-bit xor3 for signal <v_RAM_IN0_7$xor0012> created at line 344.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0013> created at line 293.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0014> created at line 310.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0015> created at line 327.
+    Found 1-bit xor4 for signal <v_RAM_IN0_7$xor0016> created at line 344.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_8$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_8$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_8$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_8$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_8$xor0012> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0000> created at line 289.
+    Found 1-bit xor3 for signal <v_RAM_IN0_9$xor0001> created at line 297.
+    Found 1-bit xor3 for signal <v_RAM_IN0_9$xor0002> created at line 314.
+    Found 1-bit xor3 for signal <v_RAM_IN0_9$xor0003> created at line 331.
+    Found 1-bit xor3 for signal <v_RAM_IN0_9$xor0004> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0005> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0006> created at line 297.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0007> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0008> created at line 314.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0009> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0010> created at line 331.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0011> created at line 348.
+    Found 1-bit xor2 for signal <v_RAM_IN0_9$xor0012> created at line 348.
+    Found 32-bit register for signal <v_RAM_OUT0>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   4 ROM(s).
+	inferred   5 Counter(s).
+	inferred 241 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 224 Xor(s).
+Unit <aes_dec> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 4x32-bit dual-port RAM                                : 1
+ 64x32-bit dual-port RAM                               : 1
+# ROMs                                                 : 6
+ 10x8-bit ROM                                          : 1
+ 256x8-bit ROM                                         : 5
+# Adders/Subtractors                                   : 2
+ 2-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 9
+ 2-bit up counter                                      : 3
+ 4-bit up counter                                      : 2
+ 6-bit down counter                                    : 1
+ 6-bit up counter                                      : 1
+ 8-bit up counter                                      : 2
+# Registers                                            : 163
+ 1-bit register                                        : 141
+ 2-bit register                                        : 1
+ 32-bit register                                       : 2
+ 6-bit register                                        : 1
+ 8-bit register                                        : 18
+# Xors                                                 : 408
+ 1-bit xor2                                            : 168
+ 1-bit xor3                                            : 96
+ 1-bit xor4                                            : 96
+ 1-bit xor6                                            : 32
+ 8-bit xor2                                            : 16
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2vp50.nph' in environment /opt/Xilinx/10.1/ISE.
+
+Synthesizing (advanced) Unit <aes_dec>.
+INFO:Xst - The ROM <Mrom__varindex0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <v_RAM_OUT0>.
+INFO:Xst - The ROM <Mrom__varindex0001> will be implemented as a read-only BLOCK RAM, absorbing the register: <v_RAM_OUT0>.
+INFO:Xst - The ROM <Mrom__varindex0002> will be implemented as a read-only BLOCK RAM, absorbing the register: <v_RAM_OUT0>.
+INFO:Xst - The ROM <Mrom__varindex0003> will be implemented as a read-only BLOCK RAM, absorbing the register: <v_RAM_OUT0>.
+INFO:Xst - The small RAM <Mram_t_STATE_RAM0> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 32-bit                     |          |
+    |     clkA           | connected to signal <CLK_I>         | rise     |
+    |     weA            | connected to signal <SRAM_WREN0_0>  | high     |
+    |     addrA          | connected to signal <i_RAM_ADDR_WR0> |          |
+    |     diA            | connected to signal <v_RAM_IN0>     |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 4-word x 32-bit                     |          |
+    |     addrB          | connected to signal <i_RAM_ADDR_RD0> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The RAM <Mrom__varindex0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK_I>         | rise     |
+    |     enA            | connected to signal <CE_I>          | high     |
+    |     weA            | connected to signal <N0>            | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <N0>            |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The RAM <Mrom__varindex0001> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK_I>         | rise     |
+    |     enA            | connected to signal <CE_I>          | high     |
+    |     weA            | connected to signal <N0>            | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <N0>            |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The RAM <Mrom__varindex0002> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK_I>         | rise     |
+    |     enA            | connected to signal <CE_I>          | high     |
+    |     weA            | connected to signal <N0>            | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <N0>            |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The RAM <Mrom__varindex0003> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK_I>         | rise     |
+    |     enA            | connected to signal <CE_I>          | high     |
+    |     weA            | connected to signal <N0>            | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <N0>            |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <aes_dec> synthesized (advanced).
+
+Synthesizing (advanced) Unit <key_expansion>.
+INFO:Xst - The RAM <Mram_KEY_EXPAN0> will be implemented as a BLOCK RAM, absorbing the following register(s): <v_KEY_COL_OUT0>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK_I>         | rise     |
+    |     weA            | connected to signal <SRAM_WREN0_0>  | high     |
+    |     addrA          | connected to signal <i_SRAM_ADDR_WR0> |          |
+    |     diA            | connected to signal <v_KEY_COL_IN0> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 64-word x 32-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkB           | connected to signal <CLK_I>         | rise     |
+    |     enB            | connected to signal <CE_I>          | high     |
+    |     addrB          | connected to signal <i_SRAM_ADDR_RD0> |          |
+    |     doB            | connected to signal <v_KEY_COL_OUT0> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The ROM <Mrom__varindex0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <v_SUB_WORD>.
+INFO:Xst - The RAM <Mrom__varindex0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK_I>         | rise     |
+    |     enA            | connected to signal <CE_I>          | high     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <i_FRW_ADD_RD0> |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <v_SUB_WORD>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <key_expansion> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 7
+ 256x8-bit single-port block RAM                       : 5
+ 4x32-bit dual-port distributed RAM                    : 1
+ 64x32-bit dual-port block RAM                         : 1
+# ROMs                                                 : 1
+ 10x8-bit ROM                                          : 1
+# Adders/Subtractors                                   : 2
+ 2-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 9
+ 2-bit up counter                                      : 3
+ 4-bit up counter                                      : 2
+ 6-bit down counter                                    : 1
+ 6-bit up counter                                      : 1
+ 8-bit up counter                                      : 2
+# Registers                                            : 285
+ Flip-Flops                                            : 285
+# Xors                                                 : 408
+ 1-bit xor2                                            : 168
+ 1-bit xor3                                            : 96
+ 1-bit xor4                                            : 96
+ 1-bit xor6                                            : 32
+ 8-bit xor2                                            : 16
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2697 - Unit <aes_dec> : the RAMs <Mrom__varindex0000>, <Mrom__varindex0003> are packed into the single block RAM <Mrom__varindex00001>
+INFO:Xst:2697 - Unit <aes_dec> : the RAMs <Mrom__varindex0001>, <Mrom__varindex0002> are packed into the single block RAM <Mrom__varindex00011>
+WARNING:Xst:2677 - Node <v_RAM_IN0_9> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_8> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_10> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_11> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_12> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_13> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_20> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_14> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_15> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_21> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_16> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_22> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_17> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_19> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_23> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_18> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_24> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_30> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_25> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_31> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_28> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_26> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_27> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_29> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_10> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_11> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_12> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_13> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_14> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_15> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_20> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_16> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_21> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_17> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_18> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_22> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_23> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_19> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_24> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_25> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_30> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_26> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_31> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_27> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_28> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_RAM_IN0_29> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_8> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <v_DATA_COLUMN_9> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM09> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM010> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM011> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM012> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM013> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM014> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM015> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM018> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM016> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM017> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM019> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM020> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM021> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM022> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM023> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM024> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM025> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM026> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM027> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM028> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM029> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM030> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM031> of sequential type is unconnected in block <aes_dec>.
+WARNING:Xst:2677 - Node <Mram_t_STATE_RAM032> of sequential type is unconnected in block <aes_dec>.
+
+Optimizing unit <aes_dec> ...
+
+Optimizing unit <key_expansion> ...
+INFO:Xst:2399 - RAMs <Mrom__varindex00001>, <Mrom__varindex00011> are equivalent, second RAM is removed
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block aes_dec, actual ratio is 3.
+FlipFlop KEXP0/FF_GET_KEY has been replicated 5 time(s)
+FlipFlop v_CALCULATION_CNTR_0 has been replicated 1 time(s)
+FlipFlop v_CALCULATION_CNTR_1 has been replicated 1 time(s)
+FlipFlop v_CALCULATION_CNTR_2 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <aes_dec> :
+	Found 2-bit shift register for signal <SRAM_WREN0>.
+Unit <aes_dec> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 285
+ Flip-Flops                                            : 285
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : aes_dec.ngr
+Top Level Output File Name         : aes_dec
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 31
+
+Cell Usage :
+# BELS                             : 1331
+#      GND                         : 1
+#      INV                         : 10
+#      LUT1                        : 14
+#      LUT2                        : 82
+#      LUT2_D                      : 22
+#      LUT2_L                      : 3
+#      LUT3                        : 284
+#      LUT3_D                      : 63
+#      LUT3_L                      : 16
+#      LUT4                        : 483
+#      LUT4_D                      : 45
+#      LUT4_L                      : 249
+#      MUXCY                       : 14
+#      MUXF5                       : 28
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 286
+#      FD                          : 6
+#      FDE                         : 181
+#      FDR                         : 1
+#      FDRE                        : 92
+#      FDS                         : 1
+#      FDSE                        : 5
+# RAMS                             : 11
+#      RAM16X1D                    : 8
+#      RAMB16_S36_S36              : 1
+#      RAMB16_S9                   : 1
+#      RAMB16_S9_S9                : 1
+# Shift Registers                  : 1
+#      SRL16E                      : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 30
+#      IBUF                        : 20
+#      OBUF                        : 10
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp50ff1148-6 
+
+ Number of Slices:                      675  out of  23616     2%  
+ Number of Slice Flip Flops:            286  out of  47232     0%  
+ Number of 4 input LUTs:               1288  out of  47232     2%  
+    Number used as logic:              1271
+    Number used as Shift registers:       1
+    Number used as RAMs:                 16
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    812     3%  
+ Number of BRAMs:                         3  out of    232     1%  
+ Number of GCLKs:                         1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK_I                              | BUFGP                  | 297   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -6
+
+   Minimum period: 5.211ns (Maximum Frequency: 191.902MHz)
+   Minimum input arrival time before clock: 4.302ns
+   Maximum output required time after clock: 3.670ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK_I'
+  Clock period: 5.211ns (frequency: 191.902MHz)
+  Total number of paths / destination ports: 10958 / 615
+-------------------------------------------------------------------------
+Delay:               5.211ns (Levels of Logic = 6)
+  Source:            KEXP0/FF_GET_KEY_3 (FF)
+  Destination:       v_RAM_IN0_4 (FF)
+  Source Clock:      CLK_I rising
+  Destination Clock: CLK_I rising
+
+  Data Path: KEXP0/FF_GET_KEY_3 to v_RAM_IN0_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              19   0.374   0.820  KEXP0/FF_GET_KEY_3 (KEXP0/FF_GET_KEY_3)
+     LUT2:I1->O            4   0.313   0.514  KEXP0/KEY_EXP_O<14>1 (v_KEY_COLUMN<14>)
+     LUT4:I2->O            1   0.313   0.506  SC_8_9_mux0000<4>1 (SC_8<9><4>)
+     LUT4:I1->O            1   0.313   0.418  Mxor_v_RAM_IN0_4_xor0003_xo<1> (Mxor_v_RAM_IN0_4_xor0003_xo<1>)
+     LUT4:I2->O            1   0.313   0.000  v_RAM_IN0_4_mux000050_F (N755)
+     MUXF5:I0->O           1   0.340   0.440  v_RAM_IN0_4_mux000050 (v_RAM_IN0_4_mux000050)
+     LUT4:I3->O            1   0.313   0.000  v_RAM_IN0_4_mux000081 (v_RAM_IN0_4_mux0000)
+     FDRE:D                    0.234          v_RAM_IN0_4
+    ----------------------------------------
+    Total                      5.211ns (2.513ns logic, 2.698ns route)
+                                       (48.2% logic, 51.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_I'
+  Total number of paths / destination ports: 421 / 308
+-------------------------------------------------------------------------
+Offset:              4.302ns (Levels of Logic = 5)
+  Source:            VALID_DATA_I (PAD)
+  Destination:       v_KEY_NUMB_5 (FF)
+  Destination Clock: CLK_I rising
+
+  Data Path: VALID_DATA_I to v_KEY_NUMB_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.919   0.729  VALID_DATA_I_IBUF (VALID_DATA_I_IBUF)
+     LUT2:I1->O            5   0.313   0.646  v_KEY_NUMB_and00001 (v_KEY_NUMB_and0000)
+     LUT4:I0->O            3   0.313   0.495  Mcount_v_KEY_NUMB_cy<2>11 (Mcount_v_KEY_NUMB_cy<2>)
+     LUT4:I2->O            1   0.313   0.000  Mcount_v_KEY_NUMB_xor<5>11 (Mcount_v_KEY_NUMB_xor<5>1)
+     MUXF5:I0->O           1   0.340   0.000  Mcount_v_KEY_NUMB_xor<5>1_f5 (Mcount_v_KEY_NUMB15)
+     FDSE:D                    0.234          v_KEY_NUMB_5
+    ----------------------------------------
+    Total                      4.302ns (2.432ns logic, 1.870ns route)
+                                       (56.5% logic, 43.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_I'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              3.670ns (Levels of Logic = 1)
+  Source:            VALID_O (FF)
+  Destination:       VALID_O (PAD)
+  Source Clock:      CLK_I rising
+
+  Data Path: VALID_O to VALID_O
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.374   0.445  VALID_O (VALID_O_OBUF)
+     OBUF:I->O                 2.851          VALID_O_OBUF (VALID_O)
+    ----------------------------------------
+    Total                      3.670ns (3.225ns logic, 0.445ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.64 secs
+ 
+--> 
+
+
+Total memory usage is 252932 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   72 (   0 filtered)
+Number of infos    :   16 (   0 filtered)
+

@@ -1,0 +1,3 @@
+vhdl work "aes_pkg.vhdl"
+vhdl work "key_expansion.vhdl"
+vhdl work "aes_dec.vhdl"

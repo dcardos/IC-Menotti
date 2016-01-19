@@ -1,1 +1,2 @@
 xst -ise "/root/IC-Menotti/ISE_Projects/1-tyne_AES/1-tyne_AES.ise" -intstyle ise -ifn "/root/IC-Menotti/ISE_Projects/1-tyne_AES/aes_128.xst" -ofn "/root/IC-Menotti/ISE_Projects/1-tyne_AES/aes_128.syr"
+xst -ise "/root/IC-Menotti/ISE_Projects/1-tyne_AES/1-tyne_AES.ise" -intstyle ise -ifn "/root/IC-Menotti/ISE_Projects/1-tyne_AES/aes_128.xst" -ofn "/root/IC-Menotti/ISE_Projects/1-tyne_AES/aes_128.syr"

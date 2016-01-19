@@ -1,0 +1,6 @@
+CommandLine
+/opt/Xilinx/10.1/ISE/bin/lin/unwrapped/xst -ise /root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/2-aes_128_192_256-Not_FPGA_proven.ise -intstyle ise -ifn /root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/aes_dec.xst -ofn /root/IC-Menotti/ISE_Projects/2-aes_128_192_256-Not_FPGA_proven/aes_dec.syr -finalclean 1
+s
+FormatString
+xst [-ifn <InputFile>] [-ofn <OutputFile>] [-ise <iseProjectFile>] [--quiet] [-intstyle <Style>] [--deb <DebugLevel>] [--finalclean <Clean>] [--PcubeFlow] [--globOptFlow] [--XstNtrc]
+s

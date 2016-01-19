@@ -1,0 +1,962 @@
+Release 10.1.03 - xst K.39 (lin)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to /root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: aes128_fast.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "aes128_fast.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "aes128_fast"
+Output Format                      : NGC
+Target Device                      : xc2vp50-6-ff1148
+
+---- Source Options
+Top Module Name                    : aes128_fast
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : aes128_fast.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/aes_package.vhd" in Library work.
+Package <aes_package> compiled.
+Package body <aes_package> compiled.
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/key_expander.vhd" in Library work.
+Entity <key_expander> compiled.
+Entity <key_expander> (Architecture <expansion>) compiled.
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/aes128_fast.vhd" in Library work.
+Entity <aes128_fast> compiled.
+Entity <aes128_fast> (Architecture <mapping>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <aes128_fast> in library <work> (architecture <mapping>).
+
+Analyzing hierarchy for entity <key_expander> in library <work> (architecture <expansion>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <aes128_fast> in library <work> (Architecture <mapping>).
+Entity <aes128_fast> analyzed. Unit <aes128_fast> generated.
+
+Analyzing Entity <key_expander> in library <work> (Architecture <expansion>).
+Entity <key_expander> analyzed. Unit <key_expander> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <key_expander>.
+    Related source file is "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/key_expander.vhd".
+    Register <w_i_nk3<0>> equivalent to <temp0<0>> has been removed
+    Register <w_i_nk3<1>> equivalent to <temp0<1>> has been removed
+    Register <w_i_nk3<2>> equivalent to <temp0<2>> has been removed
+    Register <w_i_nk3<3>> equivalent to <temp0<3>> has been removed
+    Found 256x8-bit ROM for signal <key_sub<0>>.
+    Found 256x8-bit ROM for signal <key_sub<1>>.
+    Found 256x8-bit ROM for signal <key_sub<2>>.
+    Found 256x8-bit ROM for signal <key_sub<3>>.
+    Found 16x16-bit ROM for signal <$rom0000>.
+    Found 8-bit xor2 for signal <key_xor_rcon<0>>.
+    Found 8-bit register for signal <rcon>.
+    Found 32-bit register for signal <temp0>.
+    Found 32-bit register for signal <w_i_nk0>.
+    Found 32-bit register for signal <w_i_nk1>.
+    Found 32-bit register for signal <w_i_nk2>.
+    Found 32-bit xor2 for signal <X0>.
+    Found 8-bit xor2 for signal <X1_0$xor0000> created at line 103.
+    Found 8-bit xor2 for signal <X1_0$xor0001> created at line 109.
+    Found 8-bit xor2 for signal <X1_1$xor0000> created at line 103.
+    Found 8-bit xor2 for signal <X1_1$xor0001> created at line 109.
+    Found 8-bit xor2 for signal <X1_2$xor0000> created at line 103.
+    Found 8-bit xor2 for signal <X1_2$xor0001> created at line 109.
+    Found 8-bit xor2 for signal <X1_3$xor0000> created at line 103.
+    Found 8-bit xor2 for signal <X1_3$xor0001> created at line 109.
+    Found 8-bit xor2 for signal <X2_0$xor0000> created at line 104.
+    Found 8-bit xor2 for signal <X2_0$xor0001> created at line 108.
+    Found 8-bit xor2 for signal <X2_1$xor0000> created at line 104.
+    Found 8-bit xor2 for signal <X2_1$xor0001> created at line 108.
+    Found 8-bit xor2 for signal <X2_2$xor0000> created at line 104.
+    Found 8-bit xor2 for signal <X2_2$xor0001> created at line 108.
+    Found 8-bit xor2 for signal <X2_3$xor0000> created at line 104.
+    Found 8-bit xor2 for signal <X2_3$xor0001> created at line 108.
+    Found 8-bit xor2 for signal <X3_0$xor0000> created at line 105.
+    Found 8-bit xor2 for signal <X3_0$xor0001> created at line 107.
+    Found 8-bit xor2 for signal <X3_1$xor0000> created at line 105.
+    Found 8-bit xor2 for signal <X3_1$xor0001> created at line 107.
+    Found 8-bit xor2 for signal <X3_2$xor0000> created at line 105.
+    Found 8-bit xor2 for signal <X3_2$xor0001> created at line 107.
+    Found 8-bit xor2 for signal <X3_3$xor0000> created at line 105.
+    Found 8-bit xor2 for signal <X3_3$xor0001> created at line 107.
+    Summary:
+	inferred   5 ROM(s).
+	inferred 136 D-type flip-flop(s).
+Unit <key_expander> synthesized.
+
+
+Synthesizing Unit <aes128_fast>.
+    Related source file is "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/aes128_fast.vhd".
+    Found 128-bit register for signal <data_out>.
+    Found 8-bit xor3 for signal <b_0_0$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_0_0$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_0_0$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_0_00$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_0_00$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_0_00$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_0_00$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_0_1$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_0_1$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_0_1$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_0_1$xor0004> created at line 712.
+    Found 8-bit xor2 for signal <b_0_10$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_0_10$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_0_10$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_0_10$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_0_10$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_0_10$xor0006> created at line 712.
+    Found 8-bit xor3 for signal <b_0_2$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_0_2$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_0_2$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_0_20$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_0_20$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_0_20$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_0_20$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_0_20$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_0_20$xor0006> created at line 712.
+    Found 8-bit xor3 for signal <b_0_3$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_0_3$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_0_3$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_0_30$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_0_30$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_0_30$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_0_30$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_0_30$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_0_30$xor0006> created at line 712.
+    Found 8-bit xor3 for signal <b_1_0$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_1_0$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_1_0$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_1_00$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_1_00$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_1_00$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_1_00$xor0004> created at line 712.
+    Found 8-bit xor2 for signal <b_1_1$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_1_1$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_1_1$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_1_1$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_1_1$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_1_1$xor0006> created at line 712.
+    Found 8-bit xor3 for signal <b_1_10$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_1_10$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_1_10$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_1_10$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_1_2$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_1_2$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_1_2$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_1_20$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_1_20$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_1_20$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_1_20$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_1_3$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_1_3$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_1_3$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_1_30$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_1_30$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_1_30$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_1_30$xor0004> created at line 712.
+    Found 8-bit xor2 for signal <b_2_0$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_2_0$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_2_0$xor0003> created at line 632.
+    Found 8-bit xor4 for signal <b_2_0$xor0004> created at line 712.
+    Found 8-bit xor4 for signal <b_2_0$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_2_00$xor0001> created at line 632.
+    Found 8-bit xor5 for signal <b_2_00$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_2_1$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_2_1$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_2_1$xor0003> created at line 632.
+    Found 8-bit xor3 for signal <b_2_1$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_2_10$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_2_10$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_2_10$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_2_10$xor0004> created at line 712.
+    Found 8-bit xor2 for signal <b_2_2$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_2_2$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_2_2$xor0003> created at line 632.
+    Found 8-bit xor4 for signal <b_2_2$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_2_20$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_2_20$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_2_20$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_2_20$xor0004> created at line 712.
+    Found 8-bit xor2 for signal <b_2_3$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_2_3$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_2_3$xor0003> created at line 632.
+    Found 8-bit xor4 for signal <b_2_3$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_2_30$xor0001> created at line 632.
+    Found 8-bit xor4 for signal <b_2_30$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_2_30$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_2_30$xor0004> created at line 712.
+    Found 8-bit xor2 for signal <b_3_0$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_3_0$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_3_0$xor0003> created at line 632.
+    Found 8-bit xor4 for signal <b_3_0$xor0004> created at line 712.
+    Found 8-bit xor2 for signal <b_3_00$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_3_00$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_3_00$xor0003> created at line 632.
+    Found 8-bit xor2 for signal <b_3_00$xor0004> created at line 712.
+    Found 8-bit xor3 for signal <b_3_00$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_3_00$xor0006> created at line 712.
+    Found 8-bit xor4 for signal <b_3_1$xor0001> created at line 632.
+    Found 8-bit xor5 for signal <b_3_1$xor0002> created at line 712.
+    Found 8-bit xor4 for signal <b_3_10$xor0001> created at line 632.
+    Found 8-bit xor5 for signal <b_3_10$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_3_2$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_3_2$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_3_2$xor0003> created at line 632.
+    Found 8-bit xor4 for signal <b_3_2$xor0004> created at line 712.
+    Found 8-bit xor4 for signal <b_3_2$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_3_20$xor0001> created at line 632.
+    Found 8-bit xor5 for signal <b_3_20$xor0002> created at line 712.
+    Found 8-bit xor2 for signal <b_3_3$xor0001> created at line 632.
+    Found 8-bit xor3 for signal <b_3_3$xor0002> created at line 712.
+    Found 8-bit xor3 for signal <b_3_3$xor0003> created at line 632.
+    Found 8-bit xor4 for signal <b_3_3$xor0004> created at line 712.
+    Found 8-bit xor4 for signal <b_3_3$xor0005> created at line 712.
+    Found 8-bit xor4 for signal <b_3_30$xor0001> created at line 632.
+    Found 8-bit xor5 for signal <b_3_30$xor0002> created at line 712.
+    Found 32-bit register for signal <data_in_reg0>.
+    Found 32-bit register for signal <data_in_reg1>.
+    Found 32-bit register for signal <data_in_reg2>.
+    Found 32-bit register for signal <data_in_reg3>.
+    Found 1-bit register for signal <done_d1>.
+    Found 1-bit register for signal <done_d2>.
+    Found 1-bit register for signal <flag_cnt>.
+    Found 32-bit register for signal <key_reg0>.
+    Found 32-bit register for signal <key_reg1>.
+    Found 32-bit register for signal <key_reg2>.
+    Found 32-bit register for signal <key_reg3>.
+    Found 4-bit comparator less for signal <key_select_3_3$cmp_lt0000> created at line 337.
+    Found 1-bit register for signal <load_d1>.
+    Found 1-bit xor2 for signal <n$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n0$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n0$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n0$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n0$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n0$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n0$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n1$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n1$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n1$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n1$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n1$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n1$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n10$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n10$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n10$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n10$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n10$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n10$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n11$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n11$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n11$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n11$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n11$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n11$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n12$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n12$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n12$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n12$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n12$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n12$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n13$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n13$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n13$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n13$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n13$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n13$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n14$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n14$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n14$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n14$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n14$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n14$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n15$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n15$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n15$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n15$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n15$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n15$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n16$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n16$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n16$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n16$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n16$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n16$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n17$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n17$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n17$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n17$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n17$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n17$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n18$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n18$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n18$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n18$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n18$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n18$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n19$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n19$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n19$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n19$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n19$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n19$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n2$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n2$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n2$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n2$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n2$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n2$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n20$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n20$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n20$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n20$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n20$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n20$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n21$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n21$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n21$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n21$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n21$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n21$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n22$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n22$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n22$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n22$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n22$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n22$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n23$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n23$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n23$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n23$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n23$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n23$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n24$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n24$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n24$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n24$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n24$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n24$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n25$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n25$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n25$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n25$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n25$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n25$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n26$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n26$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n26$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n26$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n26$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n26$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n27$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n27$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n27$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n27$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n27$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n27$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n28$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n28$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n28$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n28$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n28$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n28$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n29$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n29$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n29$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n29$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n29$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n29$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n3$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n3$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n3$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n3$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n3$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n3$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n30$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n30$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n30$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n30$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n30$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n30$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n4$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n4$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n4$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n4$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n4$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n4$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n5$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n5$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n5$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n5$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n5$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n5$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n6$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n6$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n6$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n6$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n6$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n6$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n7$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n7$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n7$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n7$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n7$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n7$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n8$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n8$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n8$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n8$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n8$xor0009> created at line 630.
+    Found 1-bit xor2 for signal <n8$xor0010> created at line 630.
+    Found 1-bit xor2 for signal <n9$xor0001> created at line 628.
+    Found 1-bit xor2 for signal <n9$xor0002> created at line 628.
+    Found 1-bit xor2 for signal <n9$xor0005> created at line 628.
+    Found 1-bit xor2 for signal <n9$xor0007> created at line 630.
+    Found 1-bit xor2 for signal <n9$xor0008> created at line 630.
+    Found 1-bit xor2 for signal <n9$xor0009> created at line 630.
+    Found 32-bit register for signal <new_key0_d1>.
+    Found 32-bit register for signal <new_key1_d1>.
+    Found 32-bit register for signal <new_key2_d1>.
+    Found 32-bit register for signal <new_key3_d1>.
+    Found 32-bit xor2 for signal <next_round_data_0>.
+    Found 32-bit xor2 for signal <next_round_data_1>.
+    Found 32-bit xor2 for signal <next_round_data_2>.
+    Found 32-bit xor2 for signal <next_round_data_3>.
+    Found 4-bit up counter for signal <round_cnt>.
+    Found 32-bit xor2 for signal <s0>.
+    Found 32-bit register for signal <s0_buf>.
+    Found 32-bit xor2 for signal <s1>.
+    Found 32-bit register for signal <s1_buf>.
+    Found 32-bit xor2 for signal <s2>.
+    Found 32-bit register for signal <s2_buf>.
+    Found 32-bit xor2 for signal <s3>.
+    Found 32-bit register for signal <s3_buf>.
+    Found 1-bit register for signal <start_d1>.
+    Found 1-bit register for signal <start_d2>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 646 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred 704 Xor(s).
+Unit <aes128_fast> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 5
+ 16x16-bit ROM                                         : 1
+ 256x8-bit ROM                                         : 4
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 88
+ 1-bit register                                        : 6
+ 128-bit register                                      : 1
+ 8-bit register                                        : 81
+# Comparators                                          : 1
+ 4-bit comparator less                                 : 1
+# Xors                                                 : 378
+ 1-bit xor2                                            : 192
+ 8-bit xor2                                            : 98
+ 8-bit xor3                                            : 48
+ 8-bit xor4                                            : 35
+ 8-bit xor5                                            : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2vp50.nph' in environment /opt/Xilinx/10.1/ISE.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 5
+ 16x16-bit ROM                                         : 1
+ 256x8-bit ROM                                         : 4
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 782
+ Flip-Flops                                            : 782
+# Comparators                                          : 1
+ 4-bit comparator less                                 : 1
+# Xors                                                 : 378
+ 1-bit xor2                                            : 192
+ 8-bit xor2                                            : 98
+ 8-bit xor3                                            : 48
+ 8-bit xor4                                            : 35
+ 8-bit xor5                                            : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2170 - Unit key_expander : the following signal(s) form a combinatorial loop: k_rot<3><1>, keyout_c1<1><2>, Mrom_key_sub<0>2_f63, k_rot<0><2>, Mrom_key_sub<0>14_f63, keyout_c0<2><1>, keyout_c1<1><0>, keyout_c0<0><7>, keyout_c1<0><1>, Mrom_key_sub<0>2_f71, keyout_c2<3><0>, Mrom_key_sub<1>15, keyout_c0<1><0>, keyout_c3<0><1>, Mrom_key_sub<1>16, keyout_c2<1><2>, Mrom_key_sub<1>416, Mrom_key_sub<0>1416, Mrom_key_sub<3>_f63, Mrom_key_sub<1>4_f63, Mrom_key_sub<1>4_f8, Mrom_key_sub<3>_f71, keyout_c2<1><0>, Mrom_key_sub<1>_f71, key_xor_rcon<0><7>, Mrom_key_sub<0>2_f8, keyout_c0<1><2>, k_rot<0><0>, keyout_c3<1><0>, Mrom_key_sub<3>15, Mrom_key_sub<1>_f63, keyout_c2<2><1>, Mrom_key_sub<0>14_f8, Mrom_key_sub<1>4_f71, Mrom_key_sub<0>216, keyout_c3<2><1>, k_rot<2><0>, Mrom_key_sub<1>_f57, Mrom_key_sub<3>16, Mrom_key_sub<1>4_f57, Mrom_key_sub<0>14_f57, Mrom_key_sub<2>216, keyout_c2<0><1>, key_xor_rcon<0><1>, k_rot<1><1>, Mrom_key_sub<0>14_f71, keyout_c3<3><0>, keyout_c0<3><0>, Mrom_key_sub<2>2_f71, keyout_c0<0><1>, Mrom_key_sub<0>2_f57, keyout_c1<3><0>, Mrom_key_sub<3>_f57, keyout_c1<2><1>, Mrom_key_sub<2>2_f57, keyout_c3<1><2>, Mrom_key_sub<2>2_f63, Mrom_key_sub<2>2_f8.
+WARNING:Xst:2170 - Unit key_expander : the following signal(s) form a combinatorial loop: Mrom_key_sub<0>12_f8, keyout_c3<3><1>, Mrom_key_sub<0>16, keyout_c2<0><0>, keyout_c3<1><1>, Mrom_key_sub<2>_f63, keyout_c2<3><1>, keyout_c1<2><0>, k_rot<3><0>, Mrom_key_sub<2>16, Mrom_key_sub<0>15, keyout_c1<1><1>, k_rot<0><1>, Mrom_key_sub<0>12_f71, Mrom_key_sub<3>2_f57, Mrom_key_sub<2>_f71, key_xor_rcon<0><6>, k_rot<1><0>, Mrom_key_sub<3>216, keyout_c0<2><0>, keyout_c1<0><0>, Mrom_key_sub<0>_f71, Mrom_key_sub<1>2_f71, keyout_c3<0><0>, Mrom_key_sub<0>1216, Mrom_key_sub<3>2_f63, Mrom_key_sub<2>_f57, keyout_c2<1><1>, key_xor_rcon<0><0>, Mrom_key_sub<0>12_f63, Mrom_key_sub<0>_f57, Mrom_key_sub<2>15, Mrom_key_sub<1>2_f8, Mrom_key_sub<1>2_f63, Mrom_key_sub<3>2_f71, keyout_c1<3><1>, keyout_c0<0><0>, Mrom_key_sub<1>216, Mrom_key_sub<0>12_f57, Mrom_key_sub<1>2_f57, keyout_c0<3><1>, k_rot<2><1>, keyout_c2<2><0>, Mrom_key_sub<0>_f63, keyout_c0<0><6>, keyout_c0<1><1>, keyout_c3<2><0>, Mrom_key_sub<3>2_f8.
+WARNING:Xst:2170 - Unit key_expander : the following signal(s) form a combinatorial loop: Mrom_key_sub<0>10_f8, Mrom_key_sub<3>4_f71, Mrom_key_sub<2>416, Mrom_key_sub<3>4_f8, keyout_c0<1><3>, key_xor_rcon<0><2>, Mrom_key_sub<2>4_f8, Mrom_key_sub<1>6_f63, Mrom_key_sub<3>4_f57, keyout_c2<2><2>, keyout_c3<2><2>, Mrom_key_sub<2>4_f71, keyout_c0<0><2>, Mrom_key_sub<0>10_f71, Mrom_key_sub<0>1016, Mrom_key_sub<1>616, keyout_c0<0><5>, k_rot<2><2>, Mrom_key_sub<1>6_f57, Mrom_key_sub<2>4_f57, keyout_c2<0><2>, Mrom_key_sub<1>6_f71, keyout_c1<3><2>, Mrom_key_sub<0>4_f57, keyout_c0<3><2>, Mrom_key_sub<0>4_f8, key_xor_rcon<0><5>, Mrom_key_sub<0>4_f63, keyout_c1<2><2>, k_rot<1><2>, keyout_c1<1><3>, keyout_c3<3><2>, Mrom_key_sub<1>6_f8, Mrom_key_sub<0>10_f57, keyout_c0<2><2>, keyout_c3<1><3>, Mrom_key_sub<2>4_f63, Mrom_key_sub<0>4_f71, keyout_c1<0><2>, Mrom_key_sub<0>10_f63, Mrom_key_sub<0>416, Mrom_key_sub<3>4_f63, keyout_c2<3><2>, k_rot<3><2>, k_rot<0><3>, keyout_c3<0><2>, Mrom_key_sub<3>416, keyout_c2<1><3>.
+WARNING:Xst:2170 - Unit key_expander : the following signal(s) form a combinatorial loop: Mrom_key_sub<0>6_f63, keyout_c2<0><3>, keyout_c1<3><3>, key_xor_rcon<0><3>, keyout_c0<3><3>, Mrom_key_sub<3>6_f71, Mrom_key_sub<1>8_f71, keyout_c1<2><3>, Mrom_key_sub<0>8_f63, keyout_c1<1><4>, keyout_c3<3><3>, Mrom_key_sub<0>6_f71, keyout_c0<0><4>, Mrom_key_sub<0>8_f8, keyout_c0<2><3>, Mrom_key_sub<0>8_f71, keyout_c3<1><4>, Mrom_key_sub<0>8_f57, Mrom_key_sub<2>6_f63, k_rot<1><3>, keyout_c1<0><3>, Mrom_key_sub<2>6_f57, key_xor_rcon<0><4>, Mrom_key_sub<2>6_f8, Mrom_key_sub<0>6_f8, Mrom_key_sub<3>6_f57, keyout_c0<0><3>, keyout_c2<3><3>, Mrom_key_sub<2>6_f71, keyout_c3<0><3>, Mrom_key_sub<1>8_f63, keyout_c2<1><4>, keyout_c0<1><4>, Mrom_key_sub<1>816, Mrom_key_sub<1>8_f8, Mrom_key_sub<3>6_f8, k_rot<0><4>, Mrom_key_sub<3>616, Mrom_key_sub<3>6_f63, keyout_c2<2><3>, keyout_c3<2><3>, Mrom_key_sub<2>616, k_rot<2><3>, k_rot<3><3>, Mrom_key_sub<1>8_f57, Mrom_key_sub<0>6_f57.
+
+Optimizing unit <aes128_fast> ...
+
+Optimizing unit <key_expander> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block aes128_fast, actual ratio is 29.
+FlipFlop s0_buf_0_0 has been replicated 3 time(s)
+FlipFlop s0_buf_0_1 has been replicated 5 time(s)
+FlipFlop s0_buf_0_2 has been replicated 5 time(s)
+FlipFlop s0_buf_0_3 has been replicated 5 time(s)
+FlipFlop s0_buf_0_4 has been replicated 3 time(s)
+FlipFlop s0_buf_0_5 has been replicated 2 time(s)
+FlipFlop s0_buf_0_6 has been replicated 2 time(s)
+FlipFlop s0_buf_0_7 has been replicated 3 time(s)
+FlipFlop s0_buf_1_0 has been replicated 4 time(s)
+FlipFlop s0_buf_1_1 has been replicated 4 time(s)
+FlipFlop s0_buf_1_2 has been replicated 6 time(s)
+FlipFlop s0_buf_1_4 has been replicated 5 time(s)
+FlipFlop s0_buf_1_5 has been replicated 2 time(s)
+FlipFlop s0_buf_1_6 has been replicated 2 time(s)
+FlipFlop s0_buf_1_7 has been replicated 5 time(s)
+FlipFlop s0_buf_2_0 has been replicated 4 time(s)
+FlipFlop s0_buf_2_1 has been replicated 3 time(s)
+FlipFlop s0_buf_2_2 has been replicated 3 time(s)
+FlipFlop s0_buf_2_3 has been replicated 3 time(s)
+FlipFlop s0_buf_2_4 has been replicated 7 time(s)
+FlipFlop s0_buf_2_5 has been replicated 8 time(s)
+FlipFlop s0_buf_2_6 has been replicated 6 time(s)
+FlipFlop s0_buf_2_7 has been replicated 5 time(s)
+FlipFlop s0_buf_3_0 has been replicated 5 time(s)
+FlipFlop s0_buf_3_1 has been replicated 6 time(s)
+FlipFlop s0_buf_3_2 has been replicated 6 time(s)
+FlipFlop s0_buf_3_3 has been replicated 6 time(s)
+FlipFlop s0_buf_3_4 has been replicated 3 time(s)
+FlipFlop s0_buf_3_5 has been replicated 3 time(s)
+FlipFlop s0_buf_3_6 has been replicated 3 time(s)
+FlipFlop s0_buf_3_7 has been replicated 4 time(s)
+FlipFlop s1_buf_0_0 has been replicated 1 time(s)
+FlipFlop s1_buf_0_1 has been replicated 3 time(s)
+FlipFlop s1_buf_0_2 has been replicated 2 time(s)
+FlipFlop s1_buf_0_3 has been replicated 1 time(s)
+FlipFlop s1_buf_0_4 has been replicated 2 time(s)
+FlipFlop s1_buf_0_5 has been replicated 1 time(s)
+FlipFlop s1_buf_0_6 has been replicated 2 time(s)
+FlipFlop s1_buf_0_7 has been replicated 2 time(s)
+FlipFlop s1_buf_1_0 has been replicated 2 time(s)
+FlipFlop s1_buf_1_1 has been replicated 3 time(s)
+FlipFlop s1_buf_1_2 has been replicated 6 time(s)
+FlipFlop s1_buf_1_3 has been replicated 6 time(s)
+FlipFlop s1_buf_1_4 has been replicated 3 time(s)
+FlipFlop s1_buf_1_5 has been replicated 2 time(s)
+FlipFlop s1_buf_1_6 has been replicated 6 time(s)
+FlipFlop s1_buf_1_7 has been replicated 2 time(s)
+FlipFlop s1_buf_2_0 has been replicated 4 time(s)
+FlipFlop s1_buf_2_1 has been replicated 3 time(s)
+FlipFlop s1_buf_2_2 has been replicated 5 time(s)
+FlipFlop s1_buf_2_3 has been replicated 8 time(s)
+FlipFlop s1_buf_2_4 has been replicated 6 time(s)
+FlipFlop s1_buf_2_5 has been replicated 4 time(s)
+FlipFlop s1_buf_2_6 has been replicated 6 time(s)
+FlipFlop s1_buf_2_7 has been replicated 4 time(s)
+FlipFlop s1_buf_3_0 has been replicated 6 time(s)
+FlipFlop s1_buf_3_1 has been replicated 5 time(s)
+FlipFlop s1_buf_3_2 has been replicated 5 time(s)
+FlipFlop s1_buf_3_3 has been replicated 7 time(s)
+FlipFlop s1_buf_3_4 has been replicated 2 time(s)
+FlipFlop s1_buf_3_5 has been replicated 4 time(s)
+FlipFlop s1_buf_3_6 has been replicated 3 time(s)
+FlipFlop s1_buf_3_7 has been replicated 7 time(s)
+FlipFlop s2_buf_0_0 has been replicated 1 time(s)
+FlipFlop s2_buf_0_1 has been replicated 1 time(s)
+FlipFlop s2_buf_0_2 has been replicated 1 time(s)
+FlipFlop s2_buf_0_3 has been replicated 1 time(s)
+FlipFlop s2_buf_0_4 has been replicated 1 time(s)
+FlipFlop s2_buf_0_7 has been replicated 1 time(s)
+FlipFlop s2_buf_1_0 has been replicated 7 time(s)
+FlipFlop s2_buf_1_1 has been replicated 7 time(s)
+FlipFlop s2_buf_1_2 has been replicated 4 time(s)
+FlipFlop s2_buf_1_3 has been replicated 3 time(s)
+FlipFlop s2_buf_1_4 has been replicated 7 time(s)
+FlipFlop s2_buf_1_5 has been replicated 1 time(s)
+FlipFlop s2_buf_1_6 has been replicated 6 time(s)
+FlipFlop s2_buf_1_7 has been replicated 7 time(s)
+FlipFlop s2_buf_2_0 has been replicated 2 time(s)
+FlipFlop s2_buf_2_1 has been replicated 2 time(s)
+FlipFlop s2_buf_2_2 has been replicated 3 time(s)
+FlipFlop s2_buf_2_3 has been replicated 2 time(s)
+FlipFlop s2_buf_2_4 has been replicated 2 time(s)
+FlipFlop s2_buf_2_5 has been replicated 2 time(s)
+FlipFlop s2_buf_2_6 has been replicated 3 time(s)
+FlipFlop s2_buf_2_7 has been replicated 4 time(s)
+FlipFlop s2_buf_3_0 has been replicated 2 time(s)
+FlipFlop s2_buf_3_1 has been replicated 4 time(s)
+FlipFlop s2_buf_3_2 has been replicated 4 time(s)
+FlipFlop s2_buf_3_3 has been replicated 4 time(s)
+FlipFlop s2_buf_3_4 has been replicated 3 time(s)
+FlipFlop s2_buf_3_5 has been replicated 4 time(s)
+FlipFlop s2_buf_3_6 has been replicated 3 time(s)
+FlipFlop s2_buf_3_7 has been replicated 4 time(s)
+FlipFlop s3_buf_0_0 has been replicated 4 time(s)
+FlipFlop s3_buf_0_1 has been replicated 2 time(s)
+FlipFlop s3_buf_0_2 has been replicated 1 time(s)
+FlipFlop s3_buf_0_3 has been replicated 6 time(s)
+FlipFlop s3_buf_0_4 has been replicated 6 time(s)
+FlipFlop s3_buf_0_6 has been replicated 2 time(s)
+FlipFlop s3_buf_0_7 has been replicated 2 time(s)
+FlipFlop s3_buf_1_0 has been replicated 2 time(s)
+FlipFlop s3_buf_1_1 has been replicated 3 time(s)
+FlipFlop s3_buf_1_2 has been replicated 2 time(s)
+FlipFlop s3_buf_1_3 has been replicated 2 time(s)
+FlipFlop s3_buf_1_4 has been replicated 4 time(s)
+FlipFlop s3_buf_1_5 has been replicated 3 time(s)
+FlipFlop s3_buf_1_6 has been replicated 4 time(s)
+FlipFlop s3_buf_1_7 has been replicated 3 time(s)
+FlipFlop s3_buf_2_2 has been replicated 1 time(s)
+FlipFlop s3_buf_2_3 has been replicated 1 time(s)
+FlipFlop s3_buf_3_0 has been replicated 2 time(s)
+FlipFlop s3_buf_3_1 has been replicated 3 time(s)
+FlipFlop s3_buf_3_2 has been replicated 2 time(s)
+FlipFlop s3_buf_3_3 has been replicated 2 time(s)
+FlipFlop s3_buf_3_4 has been replicated 2 time(s)
+FlipFlop s3_buf_3_5 has been replicated 2 time(s)
+FlipFlop s3_buf_3_6 has been replicated 2 time(s)
+FlipFlop s3_buf_3_7 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1201
+ Flip-Flops                                            : 1201
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : aes128_fast.ngr
+Top Level Output File Name         : aes128_fast
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 262
+
+Cell Usage :
+# BELS                             : 16598
+#      BUF                         : 3
+#      GND                         : 1
+#      LUT2                        : 2377
+#      LUT2_D                      : 1254
+#      LUT2_L                      : 70
+#      LUT3                        : 1015
+#      LUT3_D                      : 91
+#      LUT3_L                      : 246
+#      LUT4                        : 6974
+#      LUT4_D                      : 1207
+#      LUT4_L                      : 1833
+#      MUXCY                       : 845
+#      MUXF5                       : 457
+#      MUXF6                       : 128
+#      MUXF7                       : 64
+#      MUXF8                       : 32
+#      VCC                         : 1
+# FlipFlops/Latches                : 1201
+#      FDC                         : 811
+#      FDCE                        : 390
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 261
+#      IBUF                        : 132
+#      OBUF                        : 129
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp50ff1148-6 
+
+ Number of Slices:                     7806  out of  23616    33%  
+ Number of Slice Flip Flops:           1201  out of  47232     2%  
+ Number of 4 input LUTs:              15067  out of  47232    31%  
+ Number of IOs:                         262
+ Number of bonded IOBs:                 262  out of    812    32%  
+ Number of GCLKs:                         1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1201  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset_IBUF_1(reset_IBUF_1:O)       | NONE(s2_buf_1_4_4)     | 401   |
+reset_IBUF_2(reset_IBUF_2:O)       | NONE(key_reg1_2_4)     | 401   |
+reset                              | IBUF                   | 399   |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -6
+
+   Minimum period: 11.829ns (Maximum Frequency: 84.537MHz)
+   Minimum input arrival time before clock: 10.369ns
+   Maximum output required time after clock: 3.670ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 11.829ns (frequency: 84.537MHz)
+  Total number of paths / destination ports: 32814790 / 1333
+-------------------------------------------------------------------------
+Delay:               11.829ns (Levels of Logic = 16)
+  Source:            s2_buf_2_7_4 (FF)
+  Destination:       s0_buf_1_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: s2_buf_2_7_4 to s0_buf_1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             10   0.374   0.744  s2_buf_2_7_4 (s2_buf_2_7_4)
+     LUT4_D:I0->O         26   0.313   0.923  s_02_2_cmp_eq012315 (s_02_2_cmp_eq01127)
+     LUT2:I0->O            2   0.313   0.588  s_02_2_cmp_eq011819 (s_02_2_cmp_eq0118)
+     LUT4:I0->O            1   0.313   0.000  s_02_2_mux0000<4>11_wg_lut<2> (s_02_2_mux0000<4>11_wg_lut<2>)
+     MUXCY:S->O            1   0.377   0.000  s_02_2_mux0000<4>11_wg_cy<2> (s_02_2_mux0000<4>11_wg_cy<2>)
+     MUXCY:CI->O           1   0.042   0.000  s_02_2_mux0000<4>11_wg_cy<3> (s_02_2_mux0000<4>11_wg_cy<3>)
+     MUXCY:CI->O           1   0.042   0.000  s_02_2_mux0000<4>11_wg_cy<4> (s_02_2_mux0000<4>11_wg_cy<4>)
+     MUXCY:CI->O           2   0.524   0.588  s_02_2_mux0000<4>11_wg_cy<5> (N267)
+     LUT4:I0->O            1   0.313   0.506  s_02_2_mux0000<5>313 (s_02_2_mux0000<5>313)
+     LUT4:I1->O           19   0.313   0.820  s_02_2_mux0000<5>335 (s_02<2><5>)
+     LUT3:I1->O            1   0.313   0.440  Mxor_b_2_0_xor0005_3_xo<2>1_SW0_SW1 (N6437)
+     LUT4:I3->O            1   0.313   0.440  Mxor_b_2_0_xor0005_3_xo<2>1_SW0 (N1774)
+     LUT4:I3->O            4   0.313   0.514  Mxor_b_2_0_xor0005_3_xo<2>1 (b_2_0_xor0005<3>)
+     LUT4:I2->O            1   0.313   0.418  pr_data_0_1_mux0000<3>158 (pr_data_0_1_mux0000<3>158)
+     LUT4:I2->O            1   0.313   0.000  Mxor_next_round_data_0<1>_Result<3>1_F (N8691)
+     MUXF5:I0->O           2   0.340   0.473  Mxor_next_round_data_0<1>_Result<3>1 (next_round_data_0<1><3>)
+     LUT4:I2->O            1   0.313   0.000  s0_buf_1_mux0001<3>1 (s0_buf_1_mux0001<3>)
+     FDC:D                     0.234          s0_buf_1_3
+    ----------------------------------------
+    Total                     11.829ns (5.375ns logic, 6.454ns route)
+                                       (45.4% logic, 54.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 52097 / 1449
+-------------------------------------------------------------------------
+Offset:              10.369ns (Levels of Logic = 11)
+  Source:            mode (PAD)
+  Destination:       s0_buf_1_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: mode to s0_buf_1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           357   0.919   1.333  mode_IBUF (mode_IBUF)
+     BUF:I->O            354   0.313   1.471  mode_IBUF_1 (mode_IBUF_1)
+     LUT4_L:I0->LO         1   0.313   0.150  s_02_2_mux0000<5>2101 (s_02_2_mux0000<5>2101)
+     LUT4:I3->O           19   0.313   0.820  s_02_2_mux0000<5>335 (s_02<2><5>)
+     LUT3:I1->O            1   0.313   0.440  Mxor_b_2_0_xor0005_3_xo<2>1_SW0_SW1 (N6437)
+     LUT4:I3->O            1   0.313   0.440  Mxor_b_2_0_xor0005_3_xo<2>1_SW0 (N1774)
+     LUT4:I3->O            4   0.313   0.514  Mxor_b_2_0_xor0005_3_xo<2>1 (b_2_0_xor0005<3>)
+     LUT4:I2->O            1   0.313   0.418  pr_data_0_1_mux0000<3>158 (pr_data_0_1_mux0000<3>158)
+     LUT4:I2->O            1   0.313   0.000  Mxor_next_round_data_0<1>_Result<3>1_F (N8691)
+     MUXF5:I0->O           2   0.340   0.473  Mxor_next_round_data_0<1>_Result<3>1 (next_round_data_0<1><3>)
+     LUT4:I2->O            1   0.313   0.000  s0_buf_1_mux0001<3>1 (s0_buf_1_mux0001<3>)
+     FDC:D                     0.234          s0_buf_1_3
+    ----------------------------------------
+    Total                     10.369ns (4.310ns logic, 6.059ns route)
+                                       (41.6% logic, 58.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 129 / 129
+-------------------------------------------------------------------------
+Offset:              3.670ns (Levels of Logic = 1)
+  Source:            done_d2 (FF)
+  Destination:       done (PAD)
+  Source Clock:      clk rising
+
+  Data Path: done_d2 to done
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.374   0.445  done_d2 (done_d2)
+     OBUF:I->O                 2.851          done_OBUF (done)
+    ----------------------------------------
+    Total                      3.670ns (3.225ns logic, 0.445ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 561.00 secs
+Total CPU time to Xst completion: 560.11 secs
+ 
+--> 
+
+
+Total memory usage is 573812 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

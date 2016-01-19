@@ -1,0 +1,4 @@
+vhdl work "dual_mem.vhd"
+vhdl work "aes_lib.vhd"
+vhdl work "aes_enc.vhd"
+vhdl work "aes_fsm_enc.vhd"

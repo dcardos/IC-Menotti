@@ -1,0 +1,1 @@
+xst -ise "/root/IC-Menotti/ISE_Projects/3-aes-128_pipelined_encryption/3-aes-128_pipelined_encryption.ise" -intstyle ise -ifn "/root/IC-Menotti/ISE_Projects/3-aes-128_pipelined_encryption/Top_PipelinedCipher.xst" -ofn "/root/IC-Menotti/ISE_Projects/3-aes-128_pipelined_encryption/Top_PipelinedCipher.syr"

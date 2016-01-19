@@ -1,0 +1,1 @@
+xst -ise "/root/IC-Menotti/ISE_Projects/5-avs_aes/5-avs_aes.ise" -intstyle ise -ifn "/root/IC-Menotti/ISE_Projects/5-avs_aes/avs_aes.xst" -ofn "/root/IC-Menotti/ISE_Projects/5-avs_aes/avs_aes.syr"

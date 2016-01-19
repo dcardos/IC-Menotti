@@ -1,0 +1,5 @@
+EN mux2 NULL /root/IC-Menotti/ISE_Projects/5-avs_aes/mux2.vhd sub00/vhpl00 1453163019
+AR memory_word arch1 /root/IC-Menotti/ISE_Projects/5-avs_aes/memory_word.vhd sub00/vhpl03 1453163022
+AR mux2 arch1 /root/IC-Menotti/ISE_Projects/5-avs_aes/mux2.vhd sub00/vhpl01 1453163020
+EN sbox NULL /root/IC-Menotti/ISE_Projects/5-avs_aes/sbox.vhd sub00/vhpl04 1453163023
+EN memory_word NULL /root/IC-Menotti/ISE_Projects/5-avs_aes/memory_word.vhd sub00/vhpl02 1453163021

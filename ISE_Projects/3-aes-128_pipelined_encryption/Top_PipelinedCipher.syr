@@ -1,0 +1,1759 @@
+Release 10.1.03 - xst K.39 (lin)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /root/IC-Menotti/ISE_Projects/3-aes-128_pipelined_encryption/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to /root/IC-Menotti/ISE_Projects/3-aes-128_pipelined_encryption/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: Top_PipelinedCipher.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top_PipelinedCipher.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top_PipelinedCipher"
+Output Format                      : NGC
+Target Device                      : xc2vp50-6-ff1148
+
+---- Source Options
+Top Module Name                    : Top_PipelinedCipher
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : Top_PipelinedCipher.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "SBox.v" in library work
+Compiling verilog file "SubBytes.v" in library work
+Module <SBox> compiled
+Compiling verilog file "ShiftRows.v" in library work
+Module <SubBytes> compiled
+Compiling verilog file "RoundKeyGen.v" in library work
+Module <ShiftRows> compiled
+Compiling verilog file "MixColumns.v" in library work
+Module <RoundKeyGen> compiled
+Compiling verilog file "AddRoundKey.v" in library work
+Module <MixColumns> compiled
+Compiling verilog file "Round.v" in library work
+Module <AddRoundKey> compiled
+Compiling verilog file "KeyExpantion.v" in library work
+Module <Round> compiled
+Compiling verilog file "Top_PipelinedCipher.v" in library work
+Module <KeyExpantion> compiled
+Module <Top_PipelinedCipher> compiled
+No errors in compilation
+Analysis of file <"Top_PipelinedCipher.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Top_PipelinedCipher> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+	KEY_L = "00000000000000000000000010000000"
+	NO_ROUNDS = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <KeyExpantion> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+	KEY_L = "00000000000000000000000010000000"
+	NO_ROUNDS = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <AddRoundKey> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+
+Analyzing hierarchy for module <SubBytes> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+	NO_BYTES = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <ShiftRows> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+
+Analyzing hierarchy for module <Round> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+
+Analyzing hierarchy for module <RoundKeyGen> in library <work> with parameters.
+	KEY_L = "00000000000000000000000010000000"
+	WORD = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <SBox> in library <work>.
+
+Analyzing hierarchy for module <SubBytes> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+	NO_BYTES = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <ShiftRows> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+
+Analyzing hierarchy for module <MixColumns> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+
+Analyzing hierarchy for module <AddRoundKey> in library <work> with parameters.
+	DATA_W = "00000000000000000000000010000000"
+
+Analyzing hierarchy for module <SubBytes> in library <work> with parameters.
+	DATA_W = "00000000000000000000000000100000"
+	NO_BYTES = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <SBox> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Top_PipelinedCipher>.
+	DATA_W = 32'sb00000000000000000000000010000000
+	KEY_L = 32'sb00000000000000000000000010000000
+	NO_ROUNDS = 32'sb00000000000000000000000000001010
+Module <Top_PipelinedCipher> is correct for synthesis.
+ 
+Analyzing module <KeyExpantion> in library <work>.
+	DATA_W = 32'sb00000000000000000000000010000000
+	KEY_L = 32'sb00000000000000000000000010000000
+	NO_ROUNDS = 32'sb00000000000000000000000000001010
+Module <KeyExpantion> is correct for synthesis.
+ 
+Analyzing module <RoundKeyGen> in library <work>.
+	KEY_L = 32'sb00000000000000000000000010000000
+	WORD = 32'sb00000000000000000000000000100000
+Module <RoundKeyGen> is correct for synthesis.
+ 
+Analyzing module <SubBytes.2> in library <work>.
+	DATA_W = 32'sb00000000000000000000000000100000
+	NO_BYTES = 32'sb00000000000000000000000000000100
+Module <SubBytes.2> is correct for synthesis.
+ 
+Analyzing module <SBox> in library <work>.
+Module <SBox> is correct for synthesis.
+ 
+Analyzing module <AddRoundKey> in library <work>.
+	DATA_W = 32'sb00000000000000000000000010000000
+Module <AddRoundKey> is correct for synthesis.
+ 
+Analyzing module <SubBytes.1> in library <work>.
+	DATA_W = 32'sb00000000000000000000000010000000
+	NO_BYTES = 32'sb00000000000000000000000000010000
+Module <SubBytes.1> is correct for synthesis.
+ 
+Analyzing module <ShiftRows> in library <work>.
+	DATA_W = 32'sb00000000000000000000000010000000
+Module <ShiftRows> is correct for synthesis.
+ 
+Analyzing module <Round> in library <work>.
+	DATA_W = 32'sb00000000000000000000000010000000
+Module <Round> is correct for synthesis.
+ 
+Analyzing module <MixColumns> in library <work>.
+	DATA_W = 32'sb00000000000000000000000010000000
+Module <MixColumns> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <AddRoundKey>.
+    Related source file is "AddRoundKey.v".
+    Found 128-bit register for signal <data_out>.
+    Found 1-bit register for signal <valid_out>.
+    Found 128-bit xor2 for signal <data_out$xor0000> created at line 38.
+    Summary:
+	inferred 129 D-type flip-flop(s).
+Unit <AddRoundKey> synthesized.
+
+
+Synthesizing Unit <ShiftRows>.
+    Related source file is "ShiftRows.v".
+    Found 128-bit register for signal <data_out>.
+    Found 1-bit register for signal <valid_out>.
+    Summary:
+	inferred 129 D-type flip-flop(s).
+Unit <ShiftRows> synthesized.
+
+
+Synthesizing Unit <SBox>.
+    Related source file is "SBox.v".
+    Found 256x8-bit ROM for signal <dout$mux0000> created at line 30.
+    Found 8-bit register for signal <dout>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <SBox> synthesized.
+
+
+Synthesizing Unit <MixColumns>.
+    Related source file is "MixColumns.v".
+    Found 128-bit register for signal <data_out>.
+    Found 1-bit register for signal <valid_out>.
+    Found 1-bit xor4 for signal <data_out_0$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_1$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_10$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_100$xor0000> created at line 53.
+    Found 1-bit xor4 for signal <data_out_101$xor0000> created at line 53.
+    Found 1-bit xor4 for signal <data_out_102$xor0000> created at line 53.
+    Found 1-bit xor4 for signal <data_out_103$xor0000> created at line 53.
+    Found 1-bit xor4 for signal <data_out_104$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_105$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_106$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_107$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_108$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_109$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_11$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_110$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_111$xor0000> created at line 52.
+    Found 1-bit xor4 for signal <data_out_112$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_113$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_114$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_115$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_116$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_117$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_118$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_119$xor0000> created at line 51.
+    Found 1-bit xor4 for signal <data_out_12$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_120$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_121$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_122$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_123$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_124$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_125$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_126$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_127$xor0000> created at line 50.
+    Found 1-bit xor4 for signal <data_out_13$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_14$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_15$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_16$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_17$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_18$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_19$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_2$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_20$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_21$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_22$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_23$xor0000> created at line 66.
+    Found 1-bit xor4 for signal <data_out_24$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_25$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_26$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_27$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_28$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_29$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_3$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_30$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_31$xor0000> created at line 65.
+    Found 1-bit xor4 for signal <data_out_32$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_33$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_34$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_35$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_36$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_37$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_38$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_39$xor0000> created at line 63.
+    Found 1-bit xor4 for signal <data_out_4$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_40$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_41$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_42$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_43$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_44$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_45$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_46$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_47$xor0000> created at line 62.
+    Found 1-bit xor4 for signal <data_out_48$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_49$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_5$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_50$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_51$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_52$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_53$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_54$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_55$xor0000> created at line 61.
+    Found 1-bit xor4 for signal <data_out_56$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_57$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_58$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_59$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_6$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_60$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_61$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_62$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_63$xor0000> created at line 60.
+    Found 1-bit xor4 for signal <data_out_64$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_65$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_66$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_67$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_68$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_69$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_7$xor0000> created at line 68.
+    Found 1-bit xor4 for signal <data_out_70$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_71$xor0000> created at line 58.
+    Found 1-bit xor4 for signal <data_out_72$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_73$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_74$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_75$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_76$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_77$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_78$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_79$xor0000> created at line 57.
+    Found 1-bit xor4 for signal <data_out_8$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_80$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_81$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_82$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_83$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_84$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_85$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_86$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_87$xor0000> created at line 56.
+    Found 1-bit xor4 for signal <data_out_88$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_89$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_9$xor0000> created at line 67.
+    Found 1-bit xor4 for signal <data_out_90$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_91$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_92$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_93$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_94$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_95$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <data_out_96$xor0000> created at line 53.
+    Found 1-bit xor4 for signal <data_out_97$xor0000> created at line 53.
+    Found 1-bit xor4 for signal <data_out_98$xor0000> created at line 53.
+    Found 1-bit xor4 for signal <data_out_99$xor0000> created at line 53.
+    Found 128-bit xor2 for signal <State_Mulx3>.
+    Summary:
+	inferred 129 D-type flip-flop(s).
+	inferred 128 Xor(s).
+Unit <MixColumns> synthesized.
+
+
+Synthesizing Unit <SubBytes_1>.
+    Related source file is "SubBytes.v".
+    Found 1-bit register for signal <valid_out>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <SubBytes_1> synthesized.
+
+
+Synthesizing Unit <SubBytes_2>.
+    Related source file is "SubBytes.v".
+    Found 1-bit register for signal <valid_out>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <SubBytes_2> synthesized.
+
+
+Synthesizing Unit <Round>.
+    Related source file is "Round.v".
+Unit <Round> synthesized.
+
+
+Synthesizing Unit <RoundKeyGen>.
+    Related source file is "RoundKeyGen.v".
+    Found 128-bit register for signal <round_key>.
+    Found 1-bit register for signal <valid_out>.
+    Found 128-bit register for signal <Key_FirstStage>.
+    Found 128-bit register for signal <Key_SecondStage>.
+    Found 128-bit register for signal <round_key_delayed>.
+    Found 32-bit xor2 for signal <temp_round_key<127:96>>.
+    Found 32-bit xor2 for signal <temp_round_key<95>>.
+    Found 95-bit xor2 for signal <temp_round_key<94:0>>.
+    Found 1-bit register for signal <valid_FirstStage>.
+    Found 1-bit register for signal <valid_round_key>.
+    Summary:
+	inferred 515 D-type flip-flop(s).
+	inferred  32 Xor(s).
+Unit <RoundKeyGen> synthesized.
+
+
+Synthesizing Unit <KeyExpantion>.
+    Related source file is "KeyExpantion.v".
+Unit <KeyExpantion> synthesized.
+
+
+Synthesizing Unit <Top_PipelinedCipher>.
+    Related source file is "Top_PipelinedCipher.v".
+    Found 128-bit register for signal <data_shift2key_delayed>.
+    Found 1-bit register for signal <valid_shift2key_delayed>.
+    Summary:
+	inferred 129 D-type flip-flop(s).
+Unit <Top_PipelinedCipher> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 200
+ 256x8-bit ROM                                         : 200
+# Registers                                            : 2765
+ 1-bit register                                        : 2513
+ 128-bit register                                      : 52
+ 8-bit register                                        : 200
+# Xors                                                 : 2587
+ 1-bit xor2                                            : 960
+ 1-bit xor3                                            : 320
+ 1-bit xor4                                            : 1152
+ 128-bit xor2                                          : 11
+ 8-bit xor2                                            : 144
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2vp50.nph' in environment /opt/Xilinx/10.1/ISE.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 200
+ 256x8-bit ROM                                         : 200
+# Registers                                            : 10769
+ Flip-Flops                                            : 10769
+# Xors                                                 : 2587
+ 1-bit xor2                                            : 960
+ 1-bit xor3                                            : 320
+ 1-bit xor4                                            : 1152
+ 128-bit xor2                                          : 11
+ 8-bit xor2                                            : 144
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Top_PipelinedCipher> ...
+
+Optimizing unit <AddRoundKey> ...
+
+Optimizing unit <MixColumns> ...
+
+Optimizing unit <SubBytes_1> ...
+
+Optimizing unit <RoundKeyGen> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top_PipelinedCipher, actual ratio is 78.
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[0].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[1].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[2].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[3].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[4].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[5].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[6].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[7].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_0 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_1 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_10 has been replicated 6 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_100 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_101 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_102 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_103 has been replicated 6 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_104 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_105 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_106 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_107 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_108 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_11 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_112 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_113 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_114 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_115 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_116 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_12 has been replicated 6 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_120 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_121 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_122 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_123 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_124 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_13 has been replicated 6 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_14 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_16 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_17 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_18 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_19 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_2 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_20 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_24 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_25 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_26 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_27 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_28 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_3 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_32 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_33 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_34 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_35 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_36 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_4 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_40 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_41 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_42 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_43 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_44 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_48 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_49 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_50 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_51 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_52 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_56 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_57 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_58 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_59 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_60 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_64 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_65 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_66 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_67 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_68 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_72 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_73 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_74 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_75 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_76 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_80 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_81 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_82 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_83 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_84 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_88 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_89 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_90 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_91 has been replicated 7 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_92 has been replicated 3 time(s)
+FlipFlop ROUND[8].U_ROUND/U_KEY/data_out_96 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_0 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_1 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_10 has been replicated 6 time(s)
+FlipFlop U0_ARK/data_out_100 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_101 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_102 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_103 has been replicated 6 time(s)
+FlipFlop U0_ARK/data_out_104 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_105 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_106 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_107 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_108 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_11 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_112 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_113 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_114 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_115 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_116 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_12 has been replicated 6 time(s)
+FlipFlop U0_ARK/data_out_120 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_121 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_122 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_123 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_124 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_13 has been replicated 6 time(s)
+FlipFlop U0_ARK/data_out_14 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_16 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_17 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_18 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_19 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_2 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_20 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_24 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_25 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_26 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_27 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_28 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_3 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_32 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_33 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_34 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_35 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_36 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_4 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_40 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_41 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_42 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_43 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_44 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_48 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_49 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_50 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_51 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_52 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_56 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_57 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_58 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_59 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_60 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_64 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_65 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_66 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_67 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_68 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_72 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_73 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_74 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_75 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_76 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_80 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_81 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_82 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_83 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_84 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_88 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_89 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_90 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_91 has been replicated 7 time(s)
+FlipFlop U0_ARK/data_out_92 has been replicated 3 time(s)
+FlipFlop U0_ARK/data_out_96 has been replicated 3 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/RKGEN_U0/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[1].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/valid_out has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_0 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_1 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_10 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_11 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_12 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_13 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_14 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_16 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_17 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_18 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_19 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_2 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_20 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_24 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_25 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_26 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_27 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_28 has been replicated 2 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_3 has been replicated 6 time(s)
+FlipFlop U_KEYEXP/ROUND_KEY_GEN[9].RKGEN_U/Key_FirstStage_4 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 16747
+ Flip-Flops                                            : 16747
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Top_PipelinedCipher.ngr
+Top Level Output File Name         : Top_PipelinedCipher
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 389
+
+Cell Usage :
+# BELS                             : 54594
+#      INV                         : 34
+#      LUT2                        : 1796
+#      LUT2_D                      : 80
+#      LUT2_L                      : 560
+#      LUT3                        : 720
+#      LUT4                        : 26972
+#      LUT4_L                      : 432
+#      MUXF5                       : 12800
+#      MUXF6                       : 6400
+#      MUXF7                       : 3200
+#      MUXF8                       : 1600
+# FlipFlops/Latches                : 16747
+#      FDC                         : 99
+#      FDCE                        : 16648
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 388
+#      IBUF                        : 259
+#      OBUF                        : 129
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp50ff1148-6 
+
+ Number of Slices:                    21917  out of  23616    92%  
+ Number of Slice Flip Flops:          16747  out of  47232    35%  
+ Number of 4 input LUTs:              30594  out of  47232    64%  
+ Number of IOs:                         389
+ Number of bonded IOBs:                 389  out of    812    47%  
+ Number of GCLKs:                         1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 16747 |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------------------------------------------+----------------------------------------------------------------+-------+
+Control Signal                                                              | Buffer(FF name)                                                | Load  |
+----------------------------------------------------------------------------+----------------------------------------------------------------+-------+
+ROUND[0].U_ROUND/U_KEY/reset_inv(U_SUB/ROM[0].ROM/reset_inv1_INV_0:O)       | NONE(data_shift2key_delayed_82)                                | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_16(U_SUB/ROM[0].ROM/reset_inv1_INV_0_16:O)| NONE(ROUND[8].U_ROUND/U_SH/data_out_78)                        | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_17(U_SUB/ROM[0].ROM/reset_inv1_INV_0_17:O)| NONE(ROUND[8].U_ROUND/U_KEY/data_out_26_5)                     | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_18(U_SUB/ROM[0].ROM/reset_inv1_INV_0_18:O)| NONE(ROUND[7].U_ROUND/U_SH/data_out_50)                        | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_19(U_SUB/ROM[0].ROM/reset_inv1_INV_0_19:O)| NONE(ROUND[7].U_ROUND/U_MIX/data_out_41)                       | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_20(U_SUB/ROM[0].ROM/reset_inv1_INV_0_20:O)| NONE(ROUND[6].U_ROUND/U_SUB/ROM[7].ROM/dout_5)                 | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_21(U_SUB/ROM[0].ROM/reset_inv1_INV_0_21:O)| NONE(ROUND[6].U_ROUND/U_KEY/data_out_34_2)                     | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_22(U_SUB/ROM[0].ROM/reset_inv1_INV_0_22:O)| NONE(ROUND[5].U_ROUND/U_SUB/ROM[15].ROM/dout_1)                | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_23(U_SUB/ROM[0].ROM/reset_inv1_INV_0_23:O)| NONE(ROUND[5].U_ROUND/U_KEY/data_out_33_7)                     | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_24(U_SUB/ROM[0].ROM/reset_inv1_INV_0_24:O)| NONE(ROUND[4].U_ROUND/U_SH/data_out_71)                        | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_25(U_SUB/ROM[0].ROM/reset_inv1_INV_0_25:O)| NONE(ROUND[4].U_ROUND/U_KEY/data_out_45)                       | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_26(U_SUB/ROM[0].ROM/reset_inv1_INV_0_26:O)| NONE(ROUND[4].U_ROUND/U_KEY/data_out_115)                      | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_27(U_SUB/ROM[0].ROM/reset_inv1_INV_0_27:O)| NONE(ROUND[3].U_ROUND/U_KEY/data_out_41_1)                     | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_28(U_SUB/ROM[0].ROM/reset_inv1_INV_0_28:O)| NONE(ROUND[3].U_ROUND/U_KEY/data_out_18_2)                     | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_29(U_SUB/ROM[0].ROM/reset_inv1_INV_0_29:O)| NONE(ROUND[2].U_ROUND/U_KEY/data_out_73)                       | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_30(U_SUB/ROM[0].ROM/reset_inv1_INV_0_30:O)| NONE(ROUND[2].U_ROUND/U_KEY/data_out_118)                      | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_31(U_SUB/ROM[0].ROM/reset_inv1_INV_0_31:O)| NONE(ROUND[1].U_ROUND/U_KEY/data_out_76_1)                     | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_32(U_SUB/ROM[0].ROM/reset_inv1_INV_0_32:O)| NONE(ROUND[1].U_ROUND/U_KEY/data_out_115_6)                    | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_33(U_SUB/ROM[0].ROM/reset_inv1_INV_0_33:O)| NONE(ROUND[0].U_ROUND/U_KEY/data_out_91_1)                     | 493   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_1(U_SUB/ROM[0].ROM/reset_inv1_INV_0_1:O)  | NONE(U_SUB/ROM[11].ROM/dout_1)                                 | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_10(U_SUB/ROM[0].ROM/reset_inv1_INV_0_10:O)| NONE(U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/Key_FirstStage_50)      | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_11(U_SUB/ROM[0].ROM/reset_inv1_INV_0_11:O)| NONE(U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_SecondStage_46)     | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_12(U_SUB/ROM[0].ROM/reset_inv1_INV_0_12:O)| NONE(U_KEYEXP/ROUND_KEY_GEN[2].RKGEN_U/Key_FirstStage_11_5)    | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_13(U_SUB/ROM[0].ROM/reset_inv1_INV_0_13:O)| NONE(U_KEYEXP/RKGEN_U0/round_key_78)                           | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_14(U_SUB/ROM[0].ROM/reset_inv1_INV_0_14:O)| NONE(U_KEYEXP/RKGEN_U0/Key_FirstStage_108)                     | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_15(U_SUB/ROM[0].ROM/reset_inv1_INV_0_15:O)| NONE(U0_ARK/data_out_127)                                      | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_2(U_SUB/ROM[0].ROM/reset_inv1_INV_0_2:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/SUB_U/ROM[1].ROM/dout_0)| 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_3(U_SUB/ROM[0].ROM/reset_inv1_INV_0_3:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[8].RKGEN_U/Key_FirstStage_19_5)    | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_4(U_SUB/ROM[0].ROM/reset_inv1_INV_0_4:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[7].RKGEN_U/SUB_U/ROM[1].ROM/dout_3)| 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_5(U_SUB/ROM[0].ROM/reset_inv1_INV_0_5:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/round_key_delayed_90)   | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_6(U_SUB/ROM[0].ROM/reset_inv1_INV_0_6:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[6].RKGEN_U/Key_SecondStage_54)     | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_7(U_SUB/ROM[0].ROM/reset_inv1_INV_0_7:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[5].RKGEN_U/round_key_delayed_111)  | 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_8(U_SUB/ROM[0].ROM/reset_inv1_INV_0_8:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[4].RKGEN_U/SUB_U/ROM[3].ROM/dout_3)| 492   |
+U_SUB/ROM[0].ROM/reset_inv1_INV_0_9(U_SUB/ROM[0].ROM/reset_inv1_INV_0_9:O)  | NONE(U_KEYEXP/ROUND_KEY_GEN[3].RKGEN_U/round_key_71)           | 492   |
+----------------------------------------------------------------------------+----------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -6
+
+   Minimum period: 3.068ns (Maximum Frequency: 325.974MHz)
+   Minimum input arrival time before clock: 4.068ns
+   Maximum output required time after clock: 3.615ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.068ns (frequency: 325.974MHz)
+  Total number of paths / destination ports: 176467 / 31689
+-------------------------------------------------------------------------
+Delay:               3.068ns (Levels of Logic = 5)
+  Source:            U_KEYEXP/RKGEN_U0/Key_FirstStage_16_6 (FF)
+  Destination:       U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/dout_2 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: U_KEYEXP/RKGEN_U0/Key_FirstStage_16_6 to U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/dout_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            38   0.374   0.850  U_KEYEXP/RKGEN_U0/Key_FirstStage_16_6 (U_KEYEXP/RKGEN_U0/Key_FirstStage_16_6)
+     LUT4:I3->O            1   0.313   0.000  U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux000044 (U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux000044)
+     MUXF5:I0->O           1   0.340   0.000  U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f5_0 (U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f51)
+     MUXF6:I0->O           1   0.319   0.000  U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f6 (U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f6)
+     MUXF7:I1->O           1   0.319   0.000  U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f7 (U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f7)
+     MUXF8:I1->O           1   0.319   0.000  U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f8 (U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/Mrom_dout_mux00004_f8)
+     FDCE:D                    0.234          U_KEYEXP/RKGEN_U0/SUB_U/ROM[3].ROM/dout_2
+    ----------------------------------------
+    Total                      3.068ns (2.218ns logic, 0.850ns route)
+                                       (72.3% logic, 27.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2947 / 1706
+-------------------------------------------------------------------------
+Offset:              4.068ns (Levels of Logic = 2)
+  Source:            cipherkey_valid_in (PAD)
+  Destination:       U0_ARK/data_out_127 (FF)
+  Destination Clock: clk rising
+
+  Data Path: cipherkey_valid_in to U0_ARK/data_out_127
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           235   0.919   1.245  cipherkey_valid_in_IBUF (cipherkey_valid_in_IBUF)
+     LUT2:I1->O          311   0.313   1.256  U0_ARK/data_out_and00001 (U0_ARK/data_out_and0000)
+     FDCE:CE                   0.335          U0_ARK/data_out_0
+    ----------------------------------------
+    Total                      4.068ns (1.567ns logic, 2.501ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 129 / 129
+-------------------------------------------------------------------------
+Offset:              3.615ns (Levels of Logic = 1)
+  Source:            U_KEY/valid_out (FF)
+  Destination:       valid_out (PAD)
+  Source Clock:      clk rising
+
+  Data Path: U_KEY/valid_out to valid_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.374   0.390  U_KEY/valid_out (U_KEY/valid_out)
+     OBUF:I->O                 2.851          valid_out_OBUF (valid_out)
+    ----------------------------------------
+    Total                      3.615ns (3.225ns logic, 0.390ns route)
+                                       (89.2% logic, 10.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 272.00 secs
+Total CPU time to Xst completion: 270.57 secs
+ 
+--> 
+
+
+Total memory usage is 482988 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -1,0 +1,3 @@
+vhdl work "aes_package.vhd"
+vhdl work "key_expander.vhd"
+vhdl work "aes128_fast.vhd"

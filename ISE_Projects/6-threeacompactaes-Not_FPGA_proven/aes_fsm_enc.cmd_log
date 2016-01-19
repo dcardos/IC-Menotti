@@ -1,0 +1,1 @@
+xst -ise "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/6-threeacompactaes-Not_FPGA_proven.ise" -intstyle ise -ifn "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/aes_fsm_enc.xst" -ofn "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/aes_fsm_enc.syr"

@@ -1,0 +1,15 @@
+NUM_USER_FILES
+4
+s
+user_file_1
+aes_dec.vhdl
+s
+user_file_2
+aes_enc.vhdl
+s
+user_file_3
+aes_pkg.vhdl
+s
+user_file_4
+key_expansion.vhdl
+s

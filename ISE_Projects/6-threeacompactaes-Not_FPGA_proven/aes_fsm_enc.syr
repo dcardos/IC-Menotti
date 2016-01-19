@@ -1,0 +1,158 @@
+Release 10.1.03 - xst K.39 (lin)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to /root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: aes_fsm_enc.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "aes_fsm_enc.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "aes_fsm_enc"
+Output Format                      : NGC
+Target Device                      : xc2vp50-6-ff1148
+
+---- Source Options
+Top Module Name                    : aes_fsm_enc
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : aes_fsm_enc.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/aes_lib.vhd" in Library work.
+Package <aes_lib> compiled.
+Package body <aes_lib> compiled.
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/dual_mem.vhd" in Library work.
+Entity <dual_mem> compiled.
+Entity <dual_mem> (Architecture <rtl>) compiled.
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/aes_enc.vhd" in Library work.
+Entity <aes_enc> compiled.
+Entity <aes_enc> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/aes_fsm_enc.vhd" in Library work.
+Entity <aes_fsm_enc> compiled.
+Entity <aes_fsm_enc> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <aes_fsm_enc> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <aes_enc> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <dual_mem> in library <work> (architecture <rtl>) with generics.
+	ADDR_LENGTH = 4
+	DATA_LENGTH = 128
+	N_ADDR = 10
+
+Analyzing hierarchy for entity <dual_mem> in library <work> (architecture <rtl>) with generics.
+	ADDR_LENGTH = 8
+	DATA_LENGTH = 8
+	N_ADDR = 256
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <aes_fsm_enc> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:819 - "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/aes_fsm_enc.vhd" line 66: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <key_data_1>, <count>
+ERROR:Xst:779 - "/root/IC-Menotti/ISE_Projects/6-threeacompactaes-Not_FPGA_proven/aes_fsm_enc.vhd" line 211: 'Others' is in unconstrained array aggregate.
+--> 
+
+
+Total memory usage is 128164 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

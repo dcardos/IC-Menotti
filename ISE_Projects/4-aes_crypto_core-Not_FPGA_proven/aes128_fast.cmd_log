@@ -1,0 +1,1 @@
+xst -ise "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/4-aes_crypto_core-Not_FPGA_proven.ise" -intstyle ise -ifn "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/aes128_fast.xst" -ofn "/root/IC-Menotti/ISE_Projects/4-aes_crypto_core-Not_FPGA_proven/aes128_fast.syr"

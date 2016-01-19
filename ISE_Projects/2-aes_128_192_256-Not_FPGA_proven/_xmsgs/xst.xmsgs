@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="Xst" num="1767" delta="unknown" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The ROM &lt;<arg fmt="%s" index="1">Mrom__varindex0000</arg>&gt; will be implemented as a read-only BLOCK RAM, absorbing the register: &lt;<arg fmt="%s" index="2">v_RAM_OUT0</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The ROM &lt;<arg fmt="%s" index="1">Mrom__varindex0001</arg>&gt; will be implemented as a read-only BLOCK RAM, absorbing the register: &lt;<arg fmt="%s" index="2">v_RAM_OUT0</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The ROM &lt;<arg fmt="%s" index="1">Mrom__varindex0002</arg>&gt; will be implemented as a read-only BLOCK RAM, absorbing the register: &lt;<arg fmt="%s" index="2">v_RAM_OUT0</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The ROM &lt;<arg fmt="%s" index="1">Mrom__varindex0003</arg>&gt; will be implemented as a read-only BLOCK RAM, absorbing the register: &lt;<arg fmt="%s" index="2">v_RAM_OUT0</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The small RAM &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM0</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The RAM &lt;<arg fmt="%s" index="1">Mrom__varindex0000</arg>&gt; will be implemented as BLOCK RAM
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The RAM &lt;<arg fmt="%s" index="1">Mrom__varindex0001</arg>&gt; will be implemented as BLOCK RAM
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The RAM &lt;<arg fmt="%s" index="1">Mrom__varindex0002</arg>&gt; will be implemented as BLOCK RAM
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The RAM &lt;<arg fmt="%s" index="1">Mrom__varindex0003</arg>&gt; will be implemented as BLOCK RAM
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The RAM &lt;<arg fmt="%s" index="1">Mram_KEY_EXPAN0</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The ROM &lt;<arg fmt="%s" index="1">Mrom__varindex0000</arg>&gt; will be implemented as a read-only BLOCK RAM, absorbing the register: &lt;<arg fmt="%s" index="2">v_SUB_WORD</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="0" delta="unknown" >The RAM &lt;<arg fmt="%s" index="1">Mrom__varindex0000</arg>&gt; will be implemented as BLOCK RAM
+</msg>
+
+<msg type="info" file="Xst" num="2697" delta="unknown" >Unit &lt;<arg fmt="%s" index="1">aes_dec</arg>&gt; : the RAMs &lt;<arg fmt="%s" index="2">Mrom__varindex0000</arg>&gt;, &lt;<arg fmt="%s" index="3">Mrom__varindex0003</arg>&gt; are packed into the single block RAM &lt;<arg fmt="%s" index="4">Mrom__varindex00001</arg>&gt;
+</msg>
+
+<msg type="info" file="Xst" num="2697" delta="unknown" >Unit &lt;<arg fmt="%s" index="1">aes_dec</arg>&gt; : the RAMs &lt;<arg fmt="%s" index="2">Mrom__varindex0001</arg>&gt;, &lt;<arg fmt="%s" index="3">Mrom__varindex0002</arg>&gt; are packed into the single block RAM &lt;<arg fmt="%s" index="4">Mrom__varindex00011</arg>&gt;
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_RAM_IN0_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">v_DATA_COLUMN_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM09</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM010</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM011</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM012</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM013</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM014</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM015</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM018</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM016</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM017</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM019</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM020</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM021</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM022</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM023</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM024</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM025</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM026</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM027</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM028</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM029</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM030</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM031</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">Mram_t_STATE_RAM032</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">aes_dec</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2399" delta="unknown" >RAMs &lt;<arg fmt="%s" index="1">Mrom__varindex00001</arg>&gt;, &lt;<arg fmt="%s" index="2">Mrom__varindex00011</arg>&gt; are equivalent, second RAM is removed
+</msg>
+
+</messages>
+

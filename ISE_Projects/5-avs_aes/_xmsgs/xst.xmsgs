@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLParsers" num="3317" delta="unknown" >&quot;<arg fmt="%s" index="1">/root/IC-Menotti/ISE_Projects/5-avs_aes/keyexpansionV2.vhd</arg>&quot; Line <arg fmt="%d" index="2">62</arg>.  Library <arg fmt="%s" index="3">avs_aes_lib</arg> cannot be found.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3013" delta="unknown" >&quot;<arg fmt="%s" index="1">/root/IC-Menotti/ISE_Projects/5-avs_aes/keyexpansionV2.vhd</arg>&quot; Line <arg fmt="%d" index="2">63</arg>. Library <arg fmt="%s" index="3">avs_aes_lib</arg> is not declared.
+</msg>
+
+</messages>
+
